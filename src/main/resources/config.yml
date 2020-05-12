@@ -1,0 +1,22 @@
+#WOW this is awesome
+broadcast:
+  announce: "[LastManStanding] Event starting in %rLMS_announce_delay% minutes."
+  open: "[LastManStanding] Event is open for %rLMS_join_time% minutes! Join using /lms join, GL HF!"
+  close: "[LastManStanding] Event is now closed for joining."
+  end: "[LastManStanding] Event ended, join next time!"
+  winner: "[LastManStanding] Winner is %rLMS_winner_name% with %rLMS_winner_kills%, his prize is %rLMS_prize%"
+  no_winner: "[LastManStanding] No winner could have been chosen."
+  join: "[LastManStanding] Joining event..."
+  failed_join: "[LastManStanding] No open LMS event could be found! Try later."
+
+config:
+  before_game_announce_delay: 5
+  number_of_events: 1
+  retries: 2
+0:
+  isActive: true
+  prize: 50000
+  duration: 2
+  joining_time: 2
+  number_of_spawns: 0
+  spawn_locations:
