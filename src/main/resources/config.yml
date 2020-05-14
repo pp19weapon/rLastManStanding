@@ -13,6 +13,7 @@ config:
   before_game_announce_delay: 5
   number_of_events: 1
   retries: 2
+  use_schedule: false
 0:
   isActive: true
   prize: 50000

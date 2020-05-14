@@ -167,6 +167,7 @@ public class LMSGame implements Listener {
         for (Player player : joinedPlayers){
             player.teleport(recordedPlayersData.get(player).getLastKnownLocation());
         }
+        stop();
     }
 
     public boolean joinPlayer(Player player){

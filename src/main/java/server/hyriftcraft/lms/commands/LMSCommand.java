@@ -7,6 +7,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
+import server.hyriftcraft.lms.Main;
 import server.hyriftcraft.lms.lms.LMSGame;
 import server.hyriftcraft.lms.lms.LMSHandler;
 import server.hyriftcraft.lms.utils.ConfigManager;
@@ -25,7 +26,7 @@ public class LMSCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String label, String[] args) {
-        if (!(commandSender instanceof Player)){
+        if (commandSender instanceof ConsoleCommandSender){
             if (command.getLabel().equalsIgnoreCase("lastmanstanding")) {
                 if (args.length == 0) {
                     //Print help
@@ -34,13 +35,13 @@ public class LMSCommand implements CommandExecutor {
                     if (args.length == 2) {
                         int id = Integer.parseInt(args[1]);
                         if (lmsHandler.startLMSGame(id)) {
-                            commandSender.sendMessage(ChatColor.GOLD + "You started LMS game with id " + id);
+                            Main.LOGGER.info(ChatColor.GOLD + "[rLastManStanding] You started LMS game with id " + id);
                             return true;
                         } else {
-                            commandSender.sendMessage(ChatColor.RED + "Could not start LMS game with id " + id + ". Is a game already started?");
+                            Main.LOGGER.info(ChatColor.RED + "[rLastManStanding] Could not start LMS game with id " + id + ". Is a game already started?");
                         }
                     } else {
-                        commandSender.sendMessage(ChatColor.RED + "Please only enter the ID of the game!");
+                        Main.LOGGER.info(ChatColor.RED + "[rLastManStanding] Please only enter the ID of the game!");
                     }
 
                 }
